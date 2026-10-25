@@ -1,0 +1,419 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f7f7;
+  font-family: Arial, sans-serif;
+  color: #111;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 490px;
+  padding: 12px;
+  background: white;
+  border-radius: 7px;
+}
+
+.forms-button {
+  display: flex;
+  margin-bottom: 24px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.forms-button button {
+  width: 50%;
+  min-height: 50px;
+  border: 0;
+  color: #888;
+  background: #eee;
+  font-weight: bold;
+}
+
+.forms-button button.active,
+.button-Toggle button.active {
+  background: #ffad00;
+  color: #111;
+}
+
+label {
+  display: block;
+  margin-bottom: 7px;
+  color: #999;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+input:not([type="checkbox"]) {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  outline: none;
+  background: #e8f0fe;
+}
+
+#signup-form-section input:not([type="checkbox"]) {
+  background: white;
+}
+
+input:focus {
+  border-color: #ffad00;
+  box-shadow: 0 0 0 2px #ffedc5;
+}
+
+.login-options,
+.signup-options {
+  display: grid;
+  grid-template-columns: 136px minmax(0, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.button-Toggle {
+  display: flex;
+  align-self: start;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.button-Toggle button {
+  flex: 1;
+  padding: 10px 7px;
+  border: 0;
+  background: #eee;
+  color: #888;
+  font-weight: bold;
+}
+
+.input-box {
+  min-width: 0;
+}
+
+.password-box,
+.password-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-box input,
+.password-field input {
+  padding-right: 42px;
+}
+
+.show-hide-button {
+  position: absolute;
+  right: 8px;
+  border: 0;
+  background: transparent;
+  color: #777;
+}
+
+.forgot-password-link,
+.otp-link {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0 28px;
+}
+
+.link {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #777;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.primary {
+  width: 100%;
+  min-height: 47px;
+  border: 1px solid #ed9e00;
+  border-radius: 5px;
+  background: #ffad00;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.primary:hover {
+  background: #ffbb24;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 8px;
+  margin-top: 30px;
+  padding: 14px 8px;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+}
+
+.social button {
+  border: 0;
+  background: transparent;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.social button:nth-child(1) {
+  color: #4285f4;
+}
+
+.social button:nth-child(2) {
+  color: #1877f2;
+}
+
+.social button:nth-child(3) {
+  color: #111;
+}
+
+.social button:nth-child(4) {
+  color: #176db5;
+}
+
+.social span {
+  font-weight: bold;
+  text-align: center;
+}
+
+.check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 16px 0;
+  color: #555;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+.check-row input {
+  width: 19px;
+  height: 19px;
+  margin: 0;
+  accent-color: #ffad00;
+}
+
+.robot {
+  align-items: center;
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.robot strong {
+  margin-left: 35px;
+  color: #4285f4;
+  font-size: 24px;
+}
+
+.terms {
+  margin-top: 18px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.terms a {
+  color: #333;
+}
+
+.error {
+  color: #c62828;
+  font-size: 12px;
+}
+
+.message {
+  color: #287a39;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.strength-track {
+  height: 4px;
+  margin-top: 7px;
+  background: #ddd;
+  overflow: hidden;
+}
+
+#strengthBar {
+  width: 0;
+  height: 100%;
+  background: red;
+  transition: width 0.2s;
+}
+
+#strengthText {
+  display: block;
+  margin-top: 5px;
+  color: red;
+  font-size: 11px;
+}
+
+.condition-toggle-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.social span {
+  color: black;
+}
+
+.social-btn .fa-brands,
+.social-btn .fa-apple {
+  color: #245fbd;
+  font-size: larger;
+}
+
+
+/* toggle */
+html[data-theme="light"] {
+  --page: #f5f5f5;
+  --card: white;
+  --text: #222;
+  --input: white;
+  --border: #ddd;
+  --toggle: #eee;
+  --muted: #666;
+}
+
+html[data-theme="dark"] {
+  --page: #181818;
+  --card: #252525;
+  --text: #f5f5f5;
+  --input: #333;
+  --border: #484848;
+  --toggle: #383838;
+  --muted: #ccc;
+}
+
+body {
+  background: var(--page) !important;
+  color: var(--text);
+}
+
+.main-container {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.forms-button,
+.forms-button button,
+.button-Toggle,
+.button-Toggle button {
+  background: var(--toggle);
+  color: var(--muted);
+}
+
+.forms-button button.active,
+.button-Toggle button.active {
+  background: #ffad00;
+  color: #111;
+}
+
+.form-section input:not([type="checkbox"]) {
+  background: var(--input);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.form-section input::placeholder {
+  color: var(--muted);
+}
+
+.link,
+.terms,
+.terms a,
+.check-row,
+.show-hide-button {
+  color: var(--text);
+}
+
+.social {
+  background: var(--card);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.social span {
+  color: var(--text);
+}
+
+.robot {
+  border-color: var(--border);
+}
+
+.strength-track {
+  background: var(--border);
+}
+
+.main-container,
+.social,
+input,
+.forms-button,
+.button-Toggle {
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+@media (max-width: 480px) {
+  body {
+    align-items: flex-start;
+    background: white;
+    padding: 12px 8px;
+  }
+
+  .form-section {
+    padding: 6px;
+  }
+
+  .login-options,
+  .signup-options {
+    grid-template-columns: 108px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .button-Toggle button {
+    padding: 10px 5px;
+    font-size: 12px;
+  }
+
+  .social {
+    flex-wrap: wrap;
+  }
+
+  .social span {
+    width: 100%;
+  }
+}
